@@ -1,9 +1,3 @@
-FROM openjdk:11
-
-RUN mkdir /cabBookingBack
-
-COPY bin/ /cabBookingBack
-
-WORKDIR /cabBookingback
+FROM openjdk:17
 
 CMD ["java", "cabBooking.CabBookingApplication"]
