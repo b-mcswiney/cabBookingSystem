@@ -3,6 +3,7 @@ package com.example.cabBookingFront.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,8 @@ public class BookingController {
 	
 	@Autowired
 	private RestTemplate template;
-	String url = "http://localhost:8080/bookings";
+	@Value("${spring.datasource.url}")
+	String url;
 	
 	@GetMapping("/list")
 	public String getAllBookings(Model model) {
